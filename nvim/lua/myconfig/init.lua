@@ -1,4 +1,4 @@
-require("myconfig.remap")
+vim.g.mapleader = " ";
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -12,7 +12,10 @@ vim.smartindent = true
 
 vim.opt.termguicolors = true
 
+vim.smartindent = true
+
 vim.opt.scrolloff = 8
+
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
