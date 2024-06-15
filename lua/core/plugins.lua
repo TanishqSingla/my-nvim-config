@@ -2,7 +2,7 @@ require("lazy").setup({
 	"rebelot/kanagawa.nvim",
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-lualine/lualine.nvim",
-	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
+	{ "nvim-tree/nvim-tree.lua",       dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 	"lewis6991/gitsigns.nvim",
 	"neovim/nvim-lspconfig",
