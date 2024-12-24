@@ -151,6 +151,22 @@ require("mason-lspconfig").setup_handlers {
 			lsp_flags = lsp_flags
 		}
 	end,
+	["ts_ls"] = function()
+		require("lspconfig").ts_ls.setup {
+			on_attach = on_attach,
+			capabilities = capabilities,
+			lsp_flags = lsp_flags,
+			autostart = not vim.uv.fs_stat("deno.json") 
+		}
+	end,
+	["denols"] = function()
+		require("lspconfig").denols.setup {
+			on_attach = on_attach,
+			capabilities = capabilities,
+			lsp_flags = lsp_flags,
+			autostart = not not vim.uv.fs_stat("deno.json")
+		}
+	end
 }
 
 -- lsp
