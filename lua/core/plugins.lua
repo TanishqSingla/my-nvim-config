@@ -19,4 +19,15 @@ require("lazy").setup({
 	"nvim-treesitter/nvim-treesitter-context",
 	"akinsho/toggleterm.nvim",
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+	{
+		"hedyhli/outline.nvim",
+		cmd = { "Outline", "OutlineOpen" },
+		lazy = true,
+		keys = { -- Example mapping to toggle outline
+			{ "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+		},
+		opts = {
+			-- Your setup opts here
+		},
+	},
 })
