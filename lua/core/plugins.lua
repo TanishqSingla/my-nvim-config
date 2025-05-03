@@ -17,8 +17,7 @@ require("lazy").setup({
 	"williamboman/mason-lspconfig.nvim",
 	"williamboman/mason.nvim",
 	"nvim-treesitter/nvim-treesitter-context",
-	"akinsho/toggleterm.nvim",
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{
 		"hedyhli/outline.nvim",
 		cmd = { "Outline", "OutlineOpen" },
