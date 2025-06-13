@@ -2,13 +2,13 @@
 local get_background = (function()
 	local time = os.date("*t")
 
-	if time.hour >= 18 or time.hour <= 6 then
+	if time.hour >= 17 or time.hour <= 6 then
 		vim.o.background = "dark"
-		return "kanagawa-dragon"
+		return "everforest"
 	end
 
 	vim.o.background = "light"
-	return "kanagawa-lotus"
+	return "everforest"
 end)
 
 vim.cmd([[colorscheme ]] .. get_background())
@@ -93,8 +93,9 @@ vim.keymap.set("n", "<leader>bx", vim.cmd.NvimTreeClose)
 -- telescope
 local telescope = require('telescope.builtin')
 
-vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
-vim.keymap.set('n', '<leader>fs', telescope.live_grep, {})
+vim.keymap.set('n', '<leader>ff', telescope.find_files, { desc = 'search files' })
+vim.keymap.set('n', '<leader>fs', telescope.live_grep, { desc = 'search code' })
+vim.keymap.set('n', '<leader>fb', telescope.buffers, { desc = 'search buffers' })
 
 -- lualine
 require("lualine").setup()
@@ -204,8 +205,20 @@ cmp.setup({
 	),
 })
 
--- nvim-treesitter-context
+require 'lspconfig'.tailwindcss.setup({
+	settings = {
+		tailwindCSS = {
+			experimental = {
+				classRegex = {
+					{ "cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+					{ "cx\\(((?:[^()]|\\([^()]*\\))*)\\)",  "(?:'|\"|`)([^']*)(?:'|\"|`)" }
+				},
+			},
+		},
+	},
+})
 
+-- nvim-treesitter-context
 local treesitter_context = require("treesitter-context")
 treesitter_context.setup()
 

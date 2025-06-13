@@ -14,10 +14,11 @@ require("lazy").setup({
 	"hrsh7th/nvim-cmp",
 	"L3MON4D3/LuaSnip",
 	"saadparwaiz1/cmp_luasnip",
-	"williamboman/mason-lspconfig.nvim",
-	"williamboman/mason.nvim",
+	{ "williamboman/mason-lspconfig.nvim", version = "1.32.0" },
+	{ "williamboman/mason.nvim", version = "1.11.0" } ,
 	"nvim-treesitter/nvim-treesitter-context",
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+	"neanias/everforest-nvim",
 	{
 		"hedyhli/outline.nvim",
 		cmd = { "Outline", "OutlineOpen" },
